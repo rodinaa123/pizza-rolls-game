@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  background-color: #f1d4f6;
+  height: 100vh;
+  font-family: "Custom419", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: "Custom419";
+  src: url("fonts/419-font.ttf") format("truetype");
+}
+
+.offer-container {
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.logo {
+  width: 55px;
+  margin-bottom: 25px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #4d4bb3;
+  margin-bottom: 30px;
+}
+
+.offer-card {
+  background: url("images/cardboard.jpg");
+  background-size: cover;
+  border: 3px solid #222;
+  border-radius: 16px;
+  padding: 40px 20px;
+}
+
+.offer-card h2 {
+  font-size: 2.2rem;
+  margin: 15px 0;
+  color: #3f51b5;
+}
+
+.small-text {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+button {
+  display: block;
+  width: 80%;
+  margin: 15px auto 0;
+  padding: 14px;
+  font-size: 1.1rem;
+  border-radius: 14px;
+  border: 2px solid #3f51b5;
+  background: transparent;
+  color: #3f51b5;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3f51b5;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

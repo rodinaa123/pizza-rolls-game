@@ -1,0 +1,198 @@
+/* BACKGROUND */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1d4f6;
+  font-family: "Custom419", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Custom419";
+  src: url("fonts/419-font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;    /* No scrolling allowed */
+  height: 100%;
+}
+
+/* MAIN CONTAINER */
+.game-container {
+  width: 100%;
+  height: 100vh;
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;     /* prevents content from pushing down */
+}
+
+.logo {
+  width: 50px;
+  display: block;
+  margin: 25px auto 0 auto;
+  margin-top: -200px;
+}
+
+/******************* TITLE BLOCK *******************/
+.title-block {
+  text-align: left;
+  margin-left: 35px;
+  margin-top: 100px;
+}
+
+.title-block h1 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 0.9;
+  color: #496D39;
+  margin: 0;
+
+}
+
+.choose {
+  font-size: 0.8rem;
+  font-weight: 1000;
+  margin-top: 13px;
+  color: #496D39;
+  margin-left: -3px;
+}
+
+/******************* PIZZA ROLL IMAGE *******************/
+#wrap {
+  width: 1000px;
+  transform: translateX(-350px);  /* SHIFT RIGHT LIKE MOCKUP */
+  margin-top: -100px;
+  margin-left: -140px;
+}
+
+/******************* SAUCE GRID *******************/
+
+.sauces {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 80px; 
+  column-gap: 5px;
+  width: 85%;
+  margin: -530px auto 0;   
+  transform: translateY(-40px); 
+}
+
+
+/******************* EACH SAUCE *******************/
+.sauce {
+  text-align: center;
+  color: #4b5320;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.sauce img {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: -85px; 
+  filter: drop-shadow(0px 10px 8px rgba(0,0,0,0.25));
+   
+}
+
+.sauce:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: -150px;
+}
+
+.buffalo {
+  margin-top: -170px;   
+  
+}
+.garlic {
+  margin-top: -170px;
+  
+}
+
+.anim {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ---------- ANIMATION KEYFRAMES ---------- */
+
+/* Titles + wrap slide from right */
+@keyframes slideLeft {
+  0% { 
+    opacity: 0;
+    transform: translateX(-80px); /* FROM LEFT */
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Sauces come from bottom */
+@keyframes slideUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- APPLY ANIMATION ---------- */
+
+.anim-title {
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+
+#wrap.anim-wrap {
+  animation: slideRight 0.s ease-out forwards;
+}
+
+.sauce.anim-sauce {
+  animation: slideUP 0.9s ease-out forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); }
+  to   { transform: scale(1); }
+}
+
+/* ---------- ZOOM ANIMATION ---------- */
+.sauce.zoom img {
+  transform: scale(2.4);
+  transition: transform 0.5s ease;
+}
+
+/* Fade other sauces */
+.sauce.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
